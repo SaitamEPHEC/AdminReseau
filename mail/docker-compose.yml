@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+ mail:
+  image: max-lambert/mail:latest
+  container_name: mail
+  restart: always
+  ports:
+   - "25:25/tcp"
+   - "993:993/tcp"
