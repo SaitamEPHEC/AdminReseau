@@ -13,8 +13,8 @@ RUN chmod -R o-rwx /etc/dovecot
 
 RUN DEBIAN_FRONTEND=noninteractive apt install postfix postfix-mysql -y
 
-
-
+COPY config.inc.php /var/www/postfixadmin/config.inc.php
+COPY postfixadmin.com /etc/nginx/sites-enabled/postfixadmin.conf
 COPY mailname /etc/mailname
 
 EXPOSE 110 143 993 995

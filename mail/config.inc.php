@@ -1,0 +1,11 @@
+$CONF['configured'] = true;
+$CONF['default_language'] = 'fr';
+$CONF['database_type'] = 'mysqli';
+$CONF['database_host'] = 'localhost';
+$CONF['database_user'] = 'postfix';
+$CONF['database_password'] = 'MOT DE PASSE';
+$CONF['database_name'] = 'postfix';
+$CONF['admin_email'] = 'admin@domain.tld';
+$CONF['domain_path'] = 'YES';
+$CONF['domain_in_mailbox'] = 'NO';
+$CONF['fetchmail'] = 'NO';
