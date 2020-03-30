@@ -1,0 +1,21 @@
+
+# mot de passe obtenu via la base de donné ( a voir si on procede comme ca )
+passdb {
+  driver = sql
+  args = /etc/dovecot/dovecot-sql.conf.ext
+}
+
+
+# mot de passe obtenu via fichier texte "mail-users"
+# passdb{
+#	driver = passwd-file
+#	args = scheme=CRYPT username_format=%u /etc/dovecot/mail-users
+#}
+
+# Par contre le nom d'utilisateur est obtenu de manière statique à partir du conteneur local
+# %d = domaine.tld
+# %n = utilisateur
+userdb {
+  driver = static
+  args = uid=vmail gid=vmail home=/var/mail/vhosts/%d/%n
+} 
