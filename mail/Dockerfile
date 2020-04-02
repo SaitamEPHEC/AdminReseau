@@ -25,6 +25,10 @@ RUN DEBIAN_FRONTEND=noninteractive apt install postfix postfix-mysql -y
 COPY config.inc.php /var/www/postfixadmin/config.inc.php
 COPY postfixadmin.com /etc/nginx/sites-enabled/postfixadmin.conf
 COPY main.cf /etc/postfix/main.cf
+COPY mysql-virtual-mailbox-domains.cf /etc/postfix/mysql-virtual-mailbox-domains.cf
+COPY mysql-virtual-mailbox-maps.cf /etc/postfix/mysql-virtual-mailbox-maps.cf
+COPY mysql-virtual-alias-maps.cf /etc/postfix/mysql-virtual-alias-maps.cf
+COPY mysql-sender-login-maps.cf /etc/postfix/mysql-sender-login-maps.cf
 
 
 
@@ -32,6 +36,5 @@ COPY main.cf /etc/postfix/main.cf
 
 
 
-
-EXPOSE 110 143 993 995
+EXPOSE 110 143 587 993 995
 CMD 
