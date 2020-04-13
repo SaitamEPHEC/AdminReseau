@@ -8,8 +8,8 @@ $ORIGIN 178.51.in-addr.arpa.
            3M              ; Minimum TTL
 )
 
-@		IN         NS		ns.wt1-8.ephec-ti.be.
-40.70		IN	PTR		ns.wt1-8.ephec-ti.be.
+@                     IN         NS                    ns.wt1-8.ephec-ti.be.
+40.70                 IN         PTR                   ns.wt1-8.ephec-ti.be.
 
 41.128	           IN	PTR		mail.wt1-8.ephec-ti.be.
 40.70		IN	PTR		www.wt1-8.ephec-ti.be.
