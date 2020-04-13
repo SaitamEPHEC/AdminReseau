@@ -1,44 +1,22 @@
 options {
-	// On lui indique d'écouter sur localhost (pour la résolution interne de la machine qui héberge le résolveur)        
-	listen-on { 51.178.40.70; 
-				localhost;
-	};
+        directory "/var/cache/bind";
 
-    port 53;
-	directory "/var/cache/bind";
+        // If there is a firewall between you and nameservers you want
+        // to talk to, you may need to fix the firewall to allow multiple
+        // ports to talk.  See http://www.kb.cert.org/vuls/id/800113
 
-	// If there is a firewall between you and nameservers you want
-	// to talk to, you may need to fix the firewall to allow multiple
-	// ports to talk.  See http://www.kb.cert.org/vuls/id/800113
+        // If your ISP provided one or more IP addresses for stable
+        // nameservers, you probably want to use them as forwarders.
+        // Uncomment the following block, and insert the addresses replacing
+        // the all-0's placeholder.
 
-	// If your ISP provided one or more IP addresses for stable 
-	// nameservers, you probably want to use them as forwarders.  
-	// Uncomment the following block, and insert the addresses replacing 
-	// the all-0's placeholder.
+        // forwarders {
+        //      0.0.0.0;
+        // };
 
-	// forwarders {
-	//      0.0.0.0;
-	// };
-
-	//========================================================================
-	// If BIND logs error messages about the root key being expired,
-	// you will need to update your keys.  See https://www.isc.org/bind-keys
-	//========================================================================
-	
-	// Indique que l'on utilise un service de sécurité DNS
-	dnssec-enable yes;
-	
-	// Active le cryptage de chaque  enregistrement de notre fichier de zone
-	dnssec-validation yes;
-	//dnssec-lookside auto;
-
-	auth-nxdomain no;    # conform to RFC1035
-	listen-on-v6 { any; };
-
-	// cette directive permet de mettre en place un résolveur pour des requêtes récursives 		
-	// Ceci active la récursion
-	recursion yes;
-
-	//Pour cacher la version de bind9
+        auth-nxdomain no;    # conform to RFC1035
+        listen-on-v6 { any; };
+        listen-on { any; };
+        allow-recursion { 127.0.0.1;};
 	version	"Inconnu";
 };
