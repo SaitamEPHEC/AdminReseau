@@ -18,5 +18,7 @@ options {
         listen-on-v6 { any; };
         listen-on { any; };
         allow-recursion { 127.0.0.1;};
+	
+	//Pour cacher la version de bind9
 	version	"Inconnu";
 };
