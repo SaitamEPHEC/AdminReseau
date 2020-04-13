@@ -9,9 +9,9 @@ $ORIGIN 178.51.in-addr.arpa.
 )
 
 @                     IN         NS                    ns.wt1-8.ephec-ti.be.
-40.70                 IN         PTR                   ns.wt1-8.ephec-ti.be.
+70.40                 IN         PTR                   ns.wt1-8.ephec-ti.be.
 
-41.128                IN         PTR                   mail.wt1-8.ephec-ti.be.
-40.70                 IN         PTR                   www.wt1-8.ephec-ti.be.
-40.70                 IN         PTR                   b2b.wt1-8.ephec-ti.be.
-40.70                 IN         PTR                   wt1-8.ephec-ti.be.
+128.41                IN         PTR                   mail.wt1-8.ephec-ti.be.
+70.40                 IN         PTR                   www.wt1-8.ephec-ti.be.
+70.40                 IN         PTR                   b2b.wt1-8.ephec-ti.be.
+70.40                 IN         PTR                   wt1-8.ephec-ti.be.
