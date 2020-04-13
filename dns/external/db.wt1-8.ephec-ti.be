@@ -12,8 +12,12 @@ wt1-8.ephec-ti.be.	IN	NS	ns.wt1-8.ephec-ti.be.
 @			IN	MX	10 mail
 
 ns			IN	A		51.178.40.70
-mail			IN	A		51.178.41.128
 www			IN	A		51.178.40.70
 @			IN	A		51.178.40.70
 b2b			IN	CNAME		www
 intranet		IN	CNAME		www
+
+hostname		IN	A		51.178.41.128
+mail			IN	A		51.178.41.128
+postfixadmin		IN	CNAME		hostname
+
