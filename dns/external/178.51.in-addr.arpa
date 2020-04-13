@@ -1,11 +1,11 @@
 $TTL 604800
 $ORIGIN 178.51.in-addr.arpa.
 @          IN         SOA   ns.wt1-8.ephec-ti.be. admin.wt1-8.ephec-ti.be. (
-                                                       2011042201      ; Serial
-                                                       1H              ; Refresh
-                                                       15M             ; Retry
-                                                       2W              ; Expire
-                                                       3M              ; Minimum TTL
+                                       2011042201      ; Serial
+                                       1H              ; Refresh
+                                       15M             ; Retry
+                                       2W              ; Expire
+                                       3M              ; Minimum TTL
 )
 
 @                     IN         NS                    ns.wt1-8.ephec-ti.be.
