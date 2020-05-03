@@ -25,6 +25,7 @@ COPY named.conf.local /etc/bind/
 COPY ./external/db.wt1-8.ephec-ti.be /etc/bind/external/
 COPY ./external/178.51.in-addr.arpa /etc/bind/external/ 
 COPY ./internal/db.wt1-8.ephec-ti.be /etc/bind/internal/
+COPY ./internal/178.51.in-addr.arpa /etc/bind/internal/
 
 COPY named.conf	/etc/bind/
 COPY named.conf.default-zones /etc/bind/
