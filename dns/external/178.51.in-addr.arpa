@@ -8,9 +8,11 @@ $ORIGIN 178.51.in-addr.arpa.
                                        3M              ; Minimum TTL
 )
 
+; name servers
 @                     IN         NS                    ns.wt1-8.ephec-ti.be.
-70.40                 IN         PTR                   ns.wt1-8.ephec-ti.be.
 
+; PTR Records
+70.40                 IN         PTR                   ns.wt1-8.ephec-ti.be.
 128.41                IN         PTR                   mail.wt1-8.ephec-ti.be.
 70.40                 IN         PTR                   www.wt1-8.ephec-ti.be.
 70.40                 IN         PTR                   b2b.wt1-8.ephec-ti.be.
