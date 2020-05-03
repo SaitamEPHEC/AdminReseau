@@ -18,7 +18,11 @@ view "interne" {
         file "/etc/bind/internal/db.wt1-8.ephec-ti.be";
     };
     
-    
+    //ZONE DE RESOLUTION INVERSE
+    zone "178.51.in-addr.arpa" {
+      type master;
+      file "/etc/bind/internal/178.51.in-addr.arpa";
+    };
 };
 
 view "externe" {
@@ -31,6 +35,6 @@ view "externe" {
     //ZONE DE RESOLUTION INVERSE
     zone "178.51.in-addr.arpa" {
       type master;
-      file "/etc/bind/178.51.in-addr.arpa";
+      file "/etc/bind/external/178.51.in-addr.arpa";
     };
 };
