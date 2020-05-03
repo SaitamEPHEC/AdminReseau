@@ -1,23 +1,36 @@
-//
-// Do any local configuration here
-//
-
-// Consider adding the 1918 zones here, if they are not used in your
-// organization
-//include "/etc/bind/zones.rfc1918";
-
-//________________________________________________________
-// ZONE DE RESOLUTION DE DOMAINE wt1-8.ephec-ti.be        |
-//________________________________________________________|
-zone "wt1-8.ephec-ti.be" {	
-  type master;
-  file "/etc/bind/external/db.wt1-8.ephec-ti.be";                                    
+acl "reseaulocal" {
+    51.178.40.70;
+    51.178.41.128;
+    51.178.41.51;
+    localhost;
 };
 
-//____________________________
-// ZONE DE RESOLUTION INVERSE |
-//____________________________|
-zone "178.51.in-addr.arpa" {
-  type master;
-  file "/etc/bind/178.51.in-addr.arpa";
+view "interne" {
+    // Machines a qui s'adressent cette vue.
+    // Ici, les utilisateurs du reseau interne.
+    match-clients { "reseaulocal"; };
+    recursion yes;
+    allow-recursion { "reseaulocal"; };
+    
+    //ZONE DE RESOLUTION DE DOMAINE wt1-8.ephec-ti.be
+    zone "wt1-8.ephec-ti.be" {
+        type master;
+        file "/etc/bind/internal/db.wt1-8.ephec-ti.be";
+    };
+    
+    
+};
+
+view "externe" {
+    //ZONE DE RESOLUTION DE DOMAINE wt1-8.ephec-ti.be
+    zone "wt1-8.ephec-ti.be" {	
+      type master;
+      file "/etc/bind/external/db.wt1-8.ephec-ti.be";                                    
+    };
+
+    //ZONE DE RESOLUTION INVERSE
+    zone "178.51.in-addr.arpa" {
+      type master;
+      file "/etc/bind/178.51.in-addr.arpa";
+    };
 };
