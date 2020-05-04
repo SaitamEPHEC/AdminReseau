@@ -27,6 +27,7 @@ COPY dovecot.conf /etc/dovecot/dovecot.conf
 
 
 RUN DEBIAN_FRONTEND=noninteractive apt install postfix postfix-mysql -y
+RUN mv /etc/postfix/main.cf /etc/postfix/main.cf.bak
 
 COPY config.inc.php /var/www/postfixadmin/config.inc.php
 COPY postfixadmin.com /etc/nginx/sites-enabled/postfixadmin.conf
