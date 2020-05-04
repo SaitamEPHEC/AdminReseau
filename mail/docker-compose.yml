@@ -2,7 +2,7 @@ version: '3'
 
 services:
  mail:
-  image: max-lambert/mail:latest
+  image: saitam/mail:latest
   container_name: mail
   restart: always
   ports:
