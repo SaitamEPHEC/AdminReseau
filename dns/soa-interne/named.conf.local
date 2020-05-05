@@ -5,7 +5,7 @@ zone "intranet" {
 };
 
 //ZONE DE RESOLUTION INVERSE
-zone "178.51.in-addr.arpa" {
+zone "0.16.172.in-addr.arpa" {
   type master;
-  file "/etc/bind/zones/178.51.in-addr.arpa";
+  file "/etc/bind/zones/0.16.172.in-addr.arpa";
 };
