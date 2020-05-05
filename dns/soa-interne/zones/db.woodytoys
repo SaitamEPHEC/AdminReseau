@@ -8,8 +8,8 @@ $ORIGIN intranet.
                 3600	; minimum 
 )
 
-@       IN	    NS      ns.intranet.
+@       IN	   NS      ns.intranet.
 
-ns      IN	    A       172.16.0.3
+ns      IN	   A       172.16.0.3
 
-erp     IN	    A       172.16.0.4
+erp     IN	   A       172.16.0.4
