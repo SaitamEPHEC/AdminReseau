@@ -8,8 +8,8 @@ $ORIGIN woodytoys.
                 3600	; minimum 
 )
 
-@           IN	    NS	    ns.woodytoys.
+@   IN	    NS	    ns.woodytoys.
 
-ns			    IN	    A		    172.16.0.3
+ns    IN	    A		    172.16.0.3
 
-intranet		IN	    A		    172.16.0.4
+intranet    IN	    A		    172.16.0.4
