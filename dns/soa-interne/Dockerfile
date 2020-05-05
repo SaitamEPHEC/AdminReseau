@@ -16,6 +16,7 @@ COPY ./zones/db.intranet /etc/bind/zones/
 COPY ./zones/178.51.in-addr.arpa /etc/bind/zones/
 
 RUN rm -rf /etc/resolv.conf
+RUN ls /etc/
 COPY resolv.conf /etc/
 
 EXPOSE 53/tcp 53/udp
