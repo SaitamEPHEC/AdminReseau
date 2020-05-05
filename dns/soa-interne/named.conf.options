@@ -21,8 +21,4 @@ options {
         //dnssec-validation auto;
 
         auth-nxdomain no;    # conform to RFC1035
-
-        allow-query { 51.178.40.70; 51.178.41.128; };
-        recursion no;
-        allow-recursion { 51.178.40.70; 51.178.41.128; };
 };
