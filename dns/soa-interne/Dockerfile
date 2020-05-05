@@ -4,6 +4,12 @@ LABEL maintainer="m.gassmann@students.ephec.be"
 
 RUN apt-get update && \
 	DEBIAN_FRONTEND=noninteractive apt-get -y -q install bind9 bind9utils dnsutils bind9-doc --no-install-recommends
+	
+RUN apt-get install -y apt-utils debconf-utils dialog
+RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
+RUN echo "resolvconf resolvconf/linkify-resolvconf boolean false" | debconf-set-selections
+RUN apt-get update
+RUN apt-get install -y resolvconf
 
 RUN mkdir -p /etc/bind/zones
 
@@ -17,7 +23,7 @@ COPY ./zones/178.51.in-addr.arpa /etc/bind/zones/
 
 RUN rm -rf /run/resolvconf/resolv.conf
 COPY resolv.conf /run/resolvconf/resolv.conf
-RUN ln -s /run/resolvconf/resolv.conf /etc/resolv.conf
+RUN ln -nsf /run/resolvconf/resolv.conf /etc/resolv.conf
 
 RUN   echo "nameserver 172.16.0.3" >> /etc/resolvconf/resolv.conf.d/base
 RUN   echo "search intranet" >> /etc/resolvconf/resolv.conf.d/base
