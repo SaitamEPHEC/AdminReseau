@@ -1,4 +1,3 @@
-#/etc/bind
 options {
         directory "/var/cache/bind";
 
