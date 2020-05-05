@@ -14,10 +14,8 @@ COPY named.conf.options /etc/bind/
 COPY named.conf.local /etc/bind/
 COPY ./zones/db.intranet /etc/bind/zones/
 COPY ./zones/178.51.in-addr.arpa /etc/bind/zones/
-
-RUN truncate -s 0 /etc/resolv.conf
-RUN   echo "nameserver 172.16.0.3" >> /etc/resolv.conf
-RUN   echo "search intranet" >> /etc/resolv.conf
+COPY resolv.conf /etc/bind/
+RUN cat /etc/bind/resolv.conf > /etc/resolv.conf
 
 RUN   echo "nameserver 172.16.0.3" >> /etc/resolvconf/resolv.conf.d/base
 RUN   echo "search intranet" >> /etc/resolvconf/resolv.conf.d/base
