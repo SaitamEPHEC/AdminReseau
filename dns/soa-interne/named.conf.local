@@ -1,7 +1,7 @@
 //ZONE DE RESOLUTION DE DOMAINE INTERNE woodytoys
-zone "woodytoys" {
+zone "intranet" {
     type master;
-    file "/etc/bind/zones/db.woodytoys";
+    file "/etc/bind/zones/db.intranet";
 };
 
 //ZONE DE RESOLUTION INVERSE
