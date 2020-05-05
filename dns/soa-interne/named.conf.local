@@ -1,4 +1,4 @@
-//ZONE DE RESOLUTION DE DOMAINE INTERNE woodytoys
+//ZONE DE RESOLUTION DE DOMAINE INTERNE
 zone "intranet" {
     type master;
     file "/etc/bind/zones/db.intranet";
