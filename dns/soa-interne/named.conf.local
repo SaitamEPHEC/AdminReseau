@@ -1,0 +1,11 @@
+//ZONE DE RESOLUTION DE DOMAINE INTERNE woodytoys
+zone "woodytoys" {
+    type master;
+    file "/etc/bind/zones/db.woodytoys";
+};
+
+//ZONE DE RESOLUTION INVERSE
+zone "178.51.in-addr.arpa" {
+  type master;
+  file "/etc/bind/zones/178.51.in-addr.arpa";
+};
