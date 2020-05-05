@@ -5,7 +5,7 @@ services:
     image: saitam/soa_interne:latest
     #build: .
     domainname: internal
-    container_name: soa_externe
+    container_name: soa_interne
     ports:
         - "53:53/tcp"
         - "53:53/udp"
