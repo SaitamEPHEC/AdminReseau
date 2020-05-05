@@ -12,4 +12,4 @@ $ORIGIN woodytoys.
 
 ns          IN	    A       172.16.0.3
 
-intranet    IN	    A		    172.16.0.4
+intranet    IN	    A       172.16.0.4
