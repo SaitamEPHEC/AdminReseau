@@ -9,6 +9,8 @@ services:
     ports:
         - "53:53/tcp"
         - "53:53/udp"
+    dns: 172.16.0.3
+    dns_search: intranet
     networks:
       intranet:
         ipv4_address: 172.16.0.3
