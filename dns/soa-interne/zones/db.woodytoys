@@ -1,6 +1,6 @@
 $TTL 604800 
-$ORIGIN woodytoys.
-@		IN	SOA	ns.woodytoys. admin.woodytoys. (
+$ORIGIN intranet.
+@		IN	SOA	ns.intranet. admin.intranet. (
                 1	; serial
                 3600	; refresh
                 6	; retry 
@@ -8,8 +8,8 @@ $ORIGIN woodytoys.
                 3600	; minimum 
 )
 
-@           IN	    NS      ns.woodytoys.
+@       IN	    NS      ns.intranet.
 
-ns          IN	    A       172.16.0.3
+ns      IN	    A       172.16.0.3
 
-intranet    IN	    A       172.16.0.4
+erp     IN	    A       172.16.0.4
