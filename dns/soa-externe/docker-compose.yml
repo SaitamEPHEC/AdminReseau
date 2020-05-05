@@ -2,7 +2,7 @@ version: '3'
 
 services:
   dns:
-    image: saitam/dns:latest
+    image: saitam/soa_externe:latest
     #build: .
     domainname: wt1-8.ephec-ti.be
     container_name: soa_externe
