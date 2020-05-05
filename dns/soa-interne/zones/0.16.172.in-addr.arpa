@@ -1,0 +1,17 @@
+$TTL 604800
+$ORIGIN 0.16.172.in-addr.arpa.
+@          IN         SOA   ns.intranet. admin.intranet. (
+                                       2011042201      ; Serial
+                                       1H              ; Refresh
+                                       15M             ; Retry
+                                       2W              ; Expire
+                                       3M              ; Minimum TTL
+)
+
+; name servers
+@                IN         NS                    ns.intranet.
+
+; PTR Records
+3                IN         PTR                   ns.intranet.
+4                IN         PTR                   erp.intranet.
+
