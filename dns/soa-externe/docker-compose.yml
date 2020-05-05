@@ -5,7 +5,7 @@ services:
     image: saitam/dns:latest
     #build: .
     domainname: wt1-8.ephec-ti.be
-    container_name: dns_container
+    container_name: soa_externe
     ports:
         - "53:53/tcp"
         - "53:53/udp"
