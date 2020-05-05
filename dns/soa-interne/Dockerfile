@@ -15,7 +15,8 @@ COPY named.conf.local /etc/bind/
 COPY ./zones/db.intranet /etc/bind/zones/
 COPY ./zones/178.51.in-addr.arpa /etc/bind/zones/
 
-RUN cat /etc/resolv.conf
+RUN sudo rm -rf /etc/resolv.conf
+COPY resolv.conf /etc/
 
 EXPOSE 53/tcp 53/udp
 
