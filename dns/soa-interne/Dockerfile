@@ -13,7 +13,7 @@ VOLUME /etc/bind
 COPY named.conf.options /etc/bind/
 COPY named.conf.local /etc/bind/
 COPY ./zones/db.intranet /etc/bind/zones/
-COPY ./zones/178.51.in-addr.arpa /etc/bind/zones/
+COPY ./zones/0.16.172.in-addr.arpa /etc/bind/zones/
 
 EXPOSE 53/tcp 53/udp
 
