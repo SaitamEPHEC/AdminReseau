@@ -15,7 +15,8 @@ COPY named.conf.local /etc/bind/
 COPY ./zones/db.intranet /etc/bind/zones/
 COPY ./zones/178.51.in-addr.arpa /etc/bind/zones/
 
-RUN sed "s/search openstacklocal nameserver 127.0.0.11 options ndots:0/namerserver 172.16.0.3 search intranet/" /etc/resolv.conf
+RUN   echo "nameserver 172.16.0.3" >> /etc/resolvconf/resolv.conf.d/base
+RUN   echo "search intranet" >> /etc/resolvconf/resolv.conf.d/base
 
 EXPOSE 53/tcp 53/udp
 
