@@ -7,15 +7,12 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
-//ZONE DE RESOLUTION DE DOMAINE wt1-8.ephec-ti.be
-zone "wt1-8.ephec-ti.be" {	
+zone "wt1-8.ephec-ti.be" {
     type master;
-    file "/etc/bind/zones/db.wt1-8.ephec-ti.be";                                    
+    file "/etc/bind/zones/db.wt1-8.ephec-ti.be";
 };
 
-//ZONE DE RESOLUTION INVERSE
 zone "178.51.in-addr.arpa" {
     type master;
     file "/etc/bind/zones/178.51.in-addr.arpa";
 };
-
