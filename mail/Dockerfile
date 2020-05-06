@@ -40,7 +40,7 @@ COPY mysql-sender-login-maps.cf /etc/postfix/mysql-sender-login-maps.cf
 
 COPY mailserver.crt /opt/mailserver.crt
 COPY mailserver.key /opt/mailserver.key
-
+COPY runservices.sh /opt/runservices.sh
 
 
 
