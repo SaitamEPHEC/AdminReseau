@@ -2,10 +2,10 @@ version: '3'
 
 services:
 	mail:
-		image: saitam/mail:latest
-		container_name: mail
-		restart: always
-		ports:
+	image: saitam/mail:latest
+	container_name: mail
+	restart: always
+	ports:
 		- "25:25/tcp"
 		- "110:110/tcp"
 		- "143:143/tcp"
