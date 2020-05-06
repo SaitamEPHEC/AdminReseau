@@ -30,6 +30,16 @@ COPY dovecot-users /etc/dovecot/dovecot-users
 
 RUN DEBIAN_FRONTEND=noninteractive apt install postfix postfix-mysql -y
 RUN mv /etc/postfix/main.cf /etc/postfix/main.cf.bak
+RUN DEBIAN_FRONTEND=noninteractive apt-get install wget
+
+RUN cd /var/www
+RUN wget http://downloads.sourceforge.net/project/postfixadmin/postfixadmin/postfixadmin-2.92/postfixadmin-2.92.tar.gz
+RUN tar -xzf postfixadmin-2.92.tar.gz
+RUN mv postfixadmin-2.92 postfixadmin
+RUN rm -rf postfixadmin-2.92.tar.gz
+RUN chown -R www-data:www-data postfixadmin
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get install php5-imap
 
 COPY config.inc.php /var/www/postfixadmin/config.inc.php
 COPY postfixadmin.conf /etc/nginx/sites-enabled/postfixadmin.conf
