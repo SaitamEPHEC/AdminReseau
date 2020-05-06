@@ -40,7 +40,7 @@ COPY master.cf /etc/postfix/master.cf
 # COPY mysql-virtual-alias-maps.cf /etc/postfix/mysql-virtual-alias-maps.cf
 # COPY mysql-sender-login-maps.cf /etc/postfix/mysql-sender-login-maps.cf
 COPY virtual_mailbox_domains /etc/postfix/virtual_mailbox_domains
-COPY virtual_alias /etc/postfix/virtual_alias
+COPY virtual_alias_maps /etc/postfix/virtual_alias_maps
 
 COPY mailserver.crt /opt/mailserver.crt
 COPY mailserver.key /opt/mailserver.key
