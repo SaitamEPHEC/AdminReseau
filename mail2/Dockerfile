@@ -5,11 +5,11 @@ RUN apt-get upgrade -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get install apache2 -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get install php -y
 
-RUN apt-get install postfix -y
+RUN DEBIAN_FRONTEND=noninteractive apt-get install postfix -y
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install dovecot-imapd dovecot-pop3d -y
 
-RUN apt-get install wget zip unzip -y
+RUN DEBIAN_FRONTEND=noninteractive apt-get install wget zip unzip -y
 RUN wget https://sourceforge.net/projects/squirrelmail/files/stable/1.4.22/squirrelmail-webmail-1.4.22.zip
 RUN unzip squirrelmail-webmail-1.4.22.zip
 RUN sudo mv squirrelmail-webmail-1.4.22 /var/www/html/
