@@ -35,10 +35,12 @@ COPY config.inc.php /var/www/postfixadmin/config.inc.php
 COPY postfixadmin.conf /etc/nginx/sites-enabled/postfixadmin.conf
 COPY main.cf /etc/postfix/main.cf
 COPY master.cf /etc/postfix/master.cf
-COPY mysql-virtual-mailbox-domains.cf /etc/postfix/mysql-virtual-mailbox-domains.cf
-COPY mysql-virtual-mailbox-maps.cf /etc/postfix/mysql-virtual-mailbox-maps.cf
-COPY mysql-virtual-alias-maps.cf /etc/postfix/mysql-virtual-alias-maps.cf
-COPY mysql-sender-login-maps.cf /etc/postfix/mysql-sender-login-maps.cf
+# COPY mysql-virtual-mailbox-domains.cf /etc/postfix/mysql-virtual-mailbox-domains.cf
+# COPY mysql-virtual-mailbox-maps.cf /etc/postfix/mysql-virtual-mailbox-maps.cf
+# COPY mysql-virtual-alias-maps.cf /etc/postfix/mysql-virtual-alias-maps.cf
+# COPY mysql-sender-login-maps.cf /etc/postfix/mysql-sender-login-maps.cf
+COPY virtual_mailbox_domains /etc/postfix/virtual_mailbox_domains
+COPY virtual_alias /etc/postfix/virtual_alias
 
 COPY mailserver.crt /opt/mailserver.crt
 COPY mailserver.key /opt/mailserver.key
