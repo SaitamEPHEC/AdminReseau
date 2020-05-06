@@ -17,6 +17,7 @@ services:
         
 networks:
   intranet:
+    driver: bridge
     ipam:
       driver: default
       config:
