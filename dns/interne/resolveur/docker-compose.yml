@@ -10,12 +10,15 @@ services:
     dns: 172.16.0.2
     dns_search: intranet
     networks:
-      default:
+      intranet:
         ipv4_address: 172.16.0.2
         
 networks:
-  default:
-    external:
-      name: soa-interne_intranet
+  intranet:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.0.0/24
         
 
