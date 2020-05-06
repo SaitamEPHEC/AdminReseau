@@ -9,6 +9,7 @@ services:
     networks:
       default:
         ipv4_address: 172.16.0.10
+    command: tail -f /dev/null
         
 networks:
   default:
