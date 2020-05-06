@@ -19,7 +19,6 @@ services:
           - "mail.wt1-8.ephec-ti.be"
 networks:
   dmz:
-    driver:
     ipam:
       driver: default
       config:
