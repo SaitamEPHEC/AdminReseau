@@ -1,22 +1,22 @@
 version: '3'
 
 services:
-	mail:
-	image: saitam/mail:latest
-	container_name: mail
-	restart: always
-	ports:
-		- "25:25/tcp"
-		- "110:110/tcp"
-		- "143:143/tcp"
-		- "587:587/tcp"
-		- "993:993/tcp"
-		- "995:995/tcp"
-		networks:
-			dmz:
-				ipv4_address: 172.16.1.6
-				aliases:
-				- "mail.wt1-8.ephec-ti.be"
+  mail:
+    image: saitam/mail:latest
+    container_name: mail
+    restart: always
+    ports:
+      - "25:25/tcp"
+      - "110:110/tcp"
+      - "143:143/tcp"
+      - "587:587/tcp"
+      - "993:993/tcp"
+      - "995:995/tcp"
+    networks:
+      dmz:
+        ipv4_address: 172.16.1.6
+        aliases:
+          - "mail.wt1-8.ephec-ti.be"
 networks:
   dmz:
     driver:
