@@ -6,11 +6,11 @@ services:
     container_name: user1
     dns: 172.16.0.3
     dns_search: intranet
-    #networks:
-      #default:
-        #ipv4_address: 172.16.0.10
+    networks:
+      default:
+        ipv4_address: 172.16.0.10
         
-#networks:
-  #default:
-    #external:
-      #name: soa-interne_intranet
+networks:
+  default:
+    external:
+      name: soa-interne_intranet
