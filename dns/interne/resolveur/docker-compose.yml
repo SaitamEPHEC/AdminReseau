@@ -13,8 +13,4 @@ services:
       intranet:
         ipv4_address: 172.16.0.2
         
-networks:
-  intranet:
-    ipam:
-      config:
-        - subnet: 172.16.0.0/24
+
