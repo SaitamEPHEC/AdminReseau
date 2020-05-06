@@ -9,7 +9,7 @@ services:
     networks:
       default:
         ipv4_address: 172.16.0.10
-    tty:true
+    tty: true
         
 networks:
   default:
