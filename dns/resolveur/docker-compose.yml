@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+ resolveur:
+    image: saitam/resolveur:latest
+    container_name: resolveur
+    ports:
+        - "53:53/tcp"
+        - "53:53/udp"
+    dns: 172.16.0.2
+    dns_search: intranet
+    networks:
+      intranet:
+        ipv4_address: 172.16.0.2
+        
+networks:
+  intranet:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.0.0/24
