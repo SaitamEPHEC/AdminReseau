@@ -10,7 +10,7 @@ services:
     dns: 172.16.0.2
     dns_search: intranet
     networks:
-      soa-interne_intranet:
+      default:
         ipv4_address: 172.16.0.2
         
 networks:
