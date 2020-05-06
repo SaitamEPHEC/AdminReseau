@@ -18,9 +18,11 @@ COPY 10-auth.conf /etc/dovecot/conf.d/10-auth.conf
 COPY 10-mail.conf /etc/dovecot/conf.d/10-mail.conf
 COPY 10-master.conf /etc/dovecot/conf.d/10-master.conf
 COPY 10-ssl.conf /etc/dovecot/conf.d/10-ssl.conf
-COPY auth-sql.conf.ext /etc/dovecot/conf.d/autho-sql.conf.ext
+# COPY auth-sql.conf.ext /etc/dovecot/conf.d/autho-sql.conf.ext
 COPY dovecot-sql.conf.ext /etc/dovecot/dovecot-sql.conf.ext
 COPY dovecot.conf /etc/dovecot/dovecot.conf
+COPY auth-passwdfile.conf.ext /etc/dovecot/conf.d/auth-passwdfile.conf.ext
+COPY dovecot-users /etc/dovecot/dovecot-users
 
 
 
