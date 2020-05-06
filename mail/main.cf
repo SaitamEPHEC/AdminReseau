@@ -31,12 +31,12 @@ alias_database = hash:/etc/aliases
 # Smtp ( OUTGOING / Client )
 smtp_tls_loglevel            = 1
 smtp_tls_security_level      = may
-smtp_tls_CAfile              = /etc/ssl/certs/ca.cert.pem
-smtp_tls_protocols           = !SSLv2, !SSLv3
-smtp_tls_mandatory_protocols = !SSLv2, !SSLv3
-smtp_tls_mandatory_ciphers   = high
-smtp_tls_exclude_ciphers     = aNULL, eNULL, EXPORT, DES, 3DES, RC2, RC4, MD5, PSK, SRP, DSS, AECDH, ADH
-smtp_tls_note_starttls_offer = yes
+# smtp_tls_CAfile              = /etc/ssl/certs/ca.cert.pem
+# smtp_tls_protocols           = !SSLv2, !SSLv3
+#smtp_tls_mandatory_protocols = !SSLv2, !SSLv3
+#smtp_tls_mandatory_ciphers   = high
+#smtp_tls_exclude_ciphers     = aNULL, eNULL, EXPORT, DES, 3DES, RC2, RC4, MD5, PSK, SRP, DSS, AECDH, ADH
+#smtp_tls_note_starttls_offer = yes
 
 # ---------------------------------------------------------------------------------------------------
 
@@ -59,11 +59,11 @@ smtpd_tls_mandatory_ciphers   = medium
 #                               plain/text...
 # smtpd_tls_cipherlist        = Ne pas modifier non plus !
 
-smtpd_tls_CAfile              = $smtp_tls_CAfile
-smtpd_tls_cert_file           = /etc/ssl/certs/mailserver.crt
-smtpd_tls_key_file            = /etc/ssl/private/mailserver.key
-smtpd_tls_dh1024_param_file   = $config_directory/dh2048.pem
-smtpd_tls_dh512_param_file    = $config_directory/dh512.pem
+#smtpd_tls_CAfile              = $smtp_tls_CAfile
+smtpd_tls_cert_file           = /opt/mailserver.crt
+smtpd_tls_key_file            = /opt/mailserver.key
+#smtpd_tls_dh1024_param_file   = $config_directory/dh2048.pem
+#smtpd_tls_dh512_param_file    = $config_directory/dh512.pem
 
 tls_preempt_cipherlist = yes
 tls_random_source      = dev:/dev/urandom

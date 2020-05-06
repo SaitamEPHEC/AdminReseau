@@ -38,6 +38,8 @@ COPY mysql-virtual-mailbox-maps.cf /etc/postfix/mysql-virtual-mailbox-maps.cf
 COPY mysql-virtual-alias-maps.cf /etc/postfix/mysql-virtual-alias-maps.cf
 COPY mysql-sender-login-maps.cf /etc/postfix/mysql-sender-login-maps.cf
 
+COPY mailserver.crt /opt/mailserver.crt
+COPY mailserver.key /opt/mailserver.key
 
 
 
