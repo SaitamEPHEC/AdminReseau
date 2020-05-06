@@ -1,14 +1,16 @@
 version: '3'
+
 services:
-  frontendintraweb:
-   image: saitam/web_intra:latest
-   ports:
-    - 80:80
-   networks:
-     intranet:
-       ipv4_address: 172.16.0.4
-   restart: always
-   container_name: test
+ frontendintraweb:
+    image: saitam/web_intra:latest
+    container_name: web_interne
+    restart: always
+    ports:
+        - 80:80
+    networks:
+      intranet:
+        ipv4_address: 172.16.0.4
+        
 networks:
   intranet:
     driver: bridge
