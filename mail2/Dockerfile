@@ -12,10 +12,10 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install dovecot-imapd dovecot-pop3d -
 RUN DEBIAN_FRONTEND=noninteractive apt-get install wget zip unzip -y
 RUN wget https://sourceforge.net/projects/squirrelmail/files/stable/1.4.22/squirrelmail-webmail-1.4.22.zip
 RUN unzip squirrelmail-webmail-1.4.22.zip
-RUN sudo mv squirrelmail-webmail-1.4.22 /var/www/html/
-RUN sudo chown -R www-data:www-data /var/www/html/squirrelmail-webmail-1.4.22/
-RUN sudo chmod 755 -R /var/www/html/squirrelmail-webmail-1.4.22/
-RUN sudo mv /var/www/html/squirrelmail-webmail-1.4.22/ /var/www/html/squirrelmail
+RUN mv squirrelmail-webmail-1.4.22 /var/www/html/
+RUN chown -R www-data:www-data /var/www/html/squirrelmail-webmail-1.4.22/
+RUN chmod 755 -R /var/www/html/squirrelmail-webmail-1.4.22/
+RUN mv /var/www/html/squirrelmail-webmail-1.4.22/ /var/www/html/squirrelmail
 
 COPY config.php /var/www/html/squirrelmail/config/config.php
 
