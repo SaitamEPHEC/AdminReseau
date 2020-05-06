@@ -7,6 +7,7 @@ RUN apt-get install php7 -y
 
 RUN apt-get install postfix -y
 
+RUN DEBIAN_FRONTEND=noninteractive apt-get install dovecot-imapd dovecot-pop3d -y
 
 
 
