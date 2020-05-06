@@ -4,8 +4,9 @@ services:
  user1:
     image: saitam/user:latest
     container_name: user1
-    domainname: internal
-    #dns: 172.16.0.3
+    dns: 
+    - 172.16.0.3
+    - 8.8.8.8
     dns_search: intranet
     networks:
       default:
