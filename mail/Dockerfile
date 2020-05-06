@@ -30,7 +30,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt install postfix postfix-mysql -y
 RUN mv /etc/postfix/main.cf /etc/postfix/main.cf.bak
 
 COPY config.inc.php /var/www/postfixadmin/config.inc.php
-COPY postfixadmin.com /etc/nginx/sites-enabled/postfixadmin.conf
+COPY postfixadmin.conf /etc/nginx/sites-enabled/postfixadmin.conf
 COPY main.cf /etc/postfix/main.cf
 COPY master.cf /etc/postfix/master.cf
 COPY mysql-virtual-mailbox-domains.cf /etc/postfix/mysql-virtual-mailbox-domains.cf
