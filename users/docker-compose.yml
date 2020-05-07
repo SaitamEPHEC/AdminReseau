@@ -10,7 +10,7 @@ services:
     dns_search: intranet
     networks:
       default:
-        ipv4_address: 172.16.0.10
+        ipv4_address: 172.17.1.1
     tty: true
         
 networks:
