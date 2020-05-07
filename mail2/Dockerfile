@@ -20,10 +20,10 @@ RUN mv /var/www/html/squirrelmail-webmail-1.4.22/ /var/www/html/squirrelmail
 COPY config.php /var/www/html/squirrelmail/config/config.php
 
 #cree user
-RUN useradd -p $(openssl passwd -1 lambert) lambertmaximilien
-RUN mkdir -p /var/www/html/lambertmaximilien
-RUN usermod -m -d /var/www/html/lambertmaximilien lambertmaximilien
-RUN chown -R lambertmaximilien:lambertmaximilien /var/www/html/lambertmaximilien
+RUN useradd -p $(openssl passwd -1 lambert) lambert.maximilien
+RUN mkdir -p /var/www/html/lambert.maximilien
+RUN usermod -m -d /var/www/html/lambert.maximilien lambert.maximilien
+RUN chown -R lambert.maximilien:lambert.maximilien /var/www/html/lambert.maximilien
 
 
 
