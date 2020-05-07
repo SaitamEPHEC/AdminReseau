@@ -21,7 +21,7 @@ COPY config.php /var/www/html/squirrelmail/config/config.php
 
 #cree user
 RUN useradd lambert.maximilien
-RUN passwd lambert.maximilien
+RUN echo -e "lambert\nlambert" | lambert.maximilien
 RUN mkdir -p /var/www/html/lambert.maximilien
 RUN usermod -m -d /var/www/html/lambert.maximilien lambert.maximilien
 RUN chown -R lambert.maximilien:lambert.maximilien /var/www/html/lambert.maximilien
