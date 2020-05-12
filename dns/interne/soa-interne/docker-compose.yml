@@ -3,7 +3,6 @@ version: '3'
 services:
  soa:
     image: saitam/soa_interne:latest
-    #build: .
     domainname: internal
     container_name: soa_interne
     ports:
@@ -12,13 +11,10 @@ services:
     dns: 172.16.0.3
     dns_search: intranet
     networks:
-      intranet:
+      custom_network:
         ipv4_address: 172.16.0.3
         
 networks:
-  intranet:
-    driver: bridge
-    ipam:
-      driver: default
-      config:
-        - subnet: 172.16.0.0/16
+  custom_network:
+    external:
+      name: intranet
