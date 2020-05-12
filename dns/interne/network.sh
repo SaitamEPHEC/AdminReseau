@@ -1,2 +1,2 @@
 #! /bin/sh
-docker network create -d bridge intranet
+sudo docker network create -d bridge intranet
