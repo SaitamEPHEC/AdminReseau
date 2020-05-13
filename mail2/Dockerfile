@@ -31,7 +31,7 @@ RUN chown -R lambert.maximilien:lambert.maximilien /var/www/html/lambert.maximil
 
 
 #suppression msg d'erreur apache2
-RUN echo "ServerName localhost" | sudo tee /etc/apache2/conf-available/servername.conf
+RUN echo "ServerName localhost" | tee /etc/apache2/conf-available/servername.conf
 
 RUN chmod +x /etc/runservices.sh
 
