@@ -8,10 +8,10 @@ services:
     ports:
         - 80:80
     networks:
-      custom_network:
+      intranet:
         ipv4_address: 172.16.0.4
         
 networks:
-  custom_network:
+  intranet:
     external:
       name: intranet
