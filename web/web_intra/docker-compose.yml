@@ -8,13 +8,10 @@ services:
     ports:
         - 80:80
     networks:
-      intranet:
+      custom_network:
         ipv4_address: 172.16.0.4
         
 networks:
-  intranet:
-    driver: bridge
-    ipam:
-      driver: default
-      config:
-        - subnet: 172.16.0.0/24
+  custom_network:
+    external:
+      name: intranet
