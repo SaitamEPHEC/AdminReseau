@@ -22,7 +22,7 @@ postfixadmin		IN	CNAME		hostname
 @		        IN 	TXT 		"v=spf1 a mx ip4:51.178.41.128 ~all"
 
 mail._domainkey 	IN      TXT     	( "v=DKIM1; h=sha256; k=rsa; t=y; "
-          "p=MIIEowIBAAKCAQEA4M6bEosgNY/0dg2wekP6pOBBBxMRHVX5MF33ogzppyGNTNSr
+"p=MIIEowIBAAKCAQEA4M6bEosgNY/0dg2wekP6pOBBBxMRHVX5MF33ogzppyGNTNSr
 AGPU7M+bX+VwV6rkGz4QEcKxBO608AFSacEUyQcPaPS/Um9j2P5yLkgIpbjaGv6o
 NN6IeHZi3RYFDWikdA76r+C2MbpnQ+tXz6YfR0gIxDa8GOe2STo/uJFYUTppAi7O
 mQM/ZzSNl64FxcSTIkl32r9yC8GWNysOtAn69uo657AahpWd2v5CL7v5cXI7T2QO
