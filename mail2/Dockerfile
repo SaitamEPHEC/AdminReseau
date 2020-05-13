@@ -23,7 +23,7 @@ COPY mailname /etc/mailname
 
 #cree user
 RUN useradd -p $(openssl passwd -1 lambert) lambert.maximilien
-RUN mkdir -p /var/www/html/lambert.maximilien
+#RUN mkdir -p /var/www/html/lambert.maximilien
 RUN usermod -m -d /var/www/html/lambert.maximilien lambert.maximilien
 RUN chown -R lambert.maximilien:lambert.maximilien /var/www/html/lambert.maximilien
 
