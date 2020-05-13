@@ -1,7 +1,7 @@
 version: '3'
 
 services:
- user1:
+ administration:
     image: saitam/user:latest
     container_name: administration
     dns: 
@@ -12,7 +12,37 @@ services:
       administration:
         ipv4_address: 172.16.2.1
         
+ direction:
+    image: saitam/user:latest
+    container_name: direction
+    dns: 
+    - 172.16.0.2
+    dns_search: intranet
+    tty: true
+    networks:
+      direction:
+        ipv4_address: 172.16.3.1
+        
+ atelier:
+    image: saitam/user:latest
+    container_name: atelier
+    dns: 
+    - 172.16.0.2
+    dns_search: intranet
+    tty: true
+    networks:
+      atelier:
+        ipv4_address: 172.16.4.1
+        
 networks:
   administration:
     external:
       name: administration
+
+  direction:
+    external:
+      name: direction
+  
+  atelier:
+    external:
+      name: atelier      
