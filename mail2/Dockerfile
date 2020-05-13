@@ -2,8 +2,8 @@ FROM ubuntu:latest
 
 RUN apt-get update -y
 RUN apt-get upgrade -y
-RUN DEBIAN_FRONTEND=noninteractive apt-get install apache2 php7 -y
-RUN DEBIAN_FRONTEND=noninteractive apt-get install apache2 php -y
+RUN DEBIAN_FRONTEND=noninteractive apt-get install apache2 -y
+RUN DEBIAN_FRONTEND=noninteractive apt-get install php -y
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install postfix -y
 
