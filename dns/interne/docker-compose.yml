@@ -13,7 +13,7 @@ services:
  soa:
     image: saitam/soa_interne:latest
     domainname: internal
-    container_name: soa_interne
+    container_name: ns
     ports:
         - "53:53/tcp"
         - "53:53/udp"
