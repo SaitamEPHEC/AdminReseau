@@ -18,4 +18,4 @@ sudo docker network create \
 --ip-range=172.16.4.0/24 \
 --gateway=172.16.4.254 \
 atelier
-docker network connect administration userTest --ip 172.16.2.1 --alias intranet
+sudo docker network connect administration userTest --ip 172.16.2.1 --alias intranet
