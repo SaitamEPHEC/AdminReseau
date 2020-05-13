@@ -19,7 +19,7 @@ RUN mv /var/www/html/squirrelmail-webmail-1.4.22/ /var/www/html/squirrelmail
 
 COPY config.php /var/www/html/squirrelmail/config/config.php
 COPY mailname /etc/mailname
-COPY runservices.sh /runservices.sh
+COPY runservices.sh /etc/runservices.sh
 #COPY main.cf /etc/postfix/main.cf
 
 #cree user
@@ -36,4 +36,4 @@ RUN chown -R lambert.maximilien:lambert.maximilien /var/www/html/lambert.maximil
 
 
 EXPOSE 25 110 143 465 587 993 995
-CMD /runservices.sh
+CMD /etc/runservices.sh
