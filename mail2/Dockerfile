@@ -20,7 +20,7 @@ RUN mv /var/www/html/squirrelmail-webmail-1.4.22/ /var/www/html/squirrelmail
 COPY config.php /var/www/html/squirrelmail/config/config.php
 COPY mailname /etc/mailname
 COPY runservices.sh /etc/runservices.sh
-#COPY main.cf /etc/postfix/main.cf
+COPY main.cf /etc/postfix/main.cf
 
 #cree user
 RUN useradd -p $(openssl passwd -1 lambert) lambert.maximilien
