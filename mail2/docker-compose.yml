@@ -4,7 +4,6 @@ services:
   mail:
     image: saitam/mail2:latest
     container_name: mail2
-    restart: always
     ports:
       - "25:25/tcp"
       - "110:110/tcp"
