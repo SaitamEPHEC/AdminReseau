@@ -36,4 +36,4 @@ RUN echo "ServerName mail.wt1-8.ephec-ti.be" | tee /etc/apache2/conf-available/s
 RUN chmod +x /etc/runservices.sh
 
 EXPOSE 25 110 143 465 587 993 995
-CMD /etc/runservices.sh
+#CMD /etc/runservices.sh
