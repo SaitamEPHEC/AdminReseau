@@ -3,7 +3,7 @@ version: '3'
 services:
  frontendintraweb:
     image: saitam/web_intra:latest
-    container_name: web_interne
+    container_name: erp
     restart: always
     ports:
         - 80:80
