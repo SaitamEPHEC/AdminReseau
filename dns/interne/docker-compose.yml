@@ -1,8 +1,18 @@
 version: '3'
 
 services:
+ resolveur:
+    image: saitam/resolveur:latest
+    container_name: resolveur
+    dns: 172.16.0.2
+    dns_search: intranet
+    networks:
+      intranet:
+        ipv4_address: 172.16.0.2
+        
  soa:
     image: saitam/soa_interne:latest
+    domainname: internal
     container_name: soa_interne
     ports:
         - "53:53/tcp"
@@ -13,22 +23,52 @@ services:
       intranet:
         ipv4_address: 172.16.0.3
         
- resolveur:
-    image: saitam/resolveur:latest
-    container_name: resolveur
-    ports:
-        - "53:53/tcp"
-        - "53:53/udp"
-    dns: 172.16.0.2
+ administration:
+    image: saitam/user:latest
+    container_name: administration
+    dns: 
+    - 172.16.0.2
     dns_search: intranet
+    tty: true
     networks:
-      intranet:
-        ipv4_address: 172.16.0.2
+      administration:
+        ipv4_address: 172.16.2.1
         
+ direction:
+    image: saitam/user:latest
+    container_name: direction
+    dns: 
+    - 172.16.0.2
+    dns_search: intranet
+    tty: true
+    networks:
+      direction:
+        ipv4_address: 172.16.3.1
+        
+ atelier:
+    image: saitam/user:latest
+    container_name: atelier
+    dns: 
+    - 172.16.0.2
+    dns_search: intranet
+    tty: true
+    networks:
+      atelier:
+        ipv4_address: 172.16.4.1
+
 networks:
   intranet:
-    #driver: bridge
-    ipam:
-      #driver: default
-      config:
-        - subnet: 172.16.0.0/24
+    external:
+      name: intranet
+      
+  administration:
+    external:
+      name: administration
+
+  direction:
+    external:
+      name: direction
+  
+  atelier:
+    external:
+      name: atelier      
