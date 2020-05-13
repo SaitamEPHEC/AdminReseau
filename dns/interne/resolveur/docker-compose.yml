@@ -6,13 +6,5 @@ services:
     container_name: resolveur
     dns: 172.16.0.2
     dns_search: intranet
-    networks:
-      custom_network:
-        ipv4_address: 172.16.0.2
-        
-networks:
-  custom_network:
-    external:
-      name: intranet
         
 
