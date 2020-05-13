@@ -19,4 +19,5 @@ b2b			IN	CNAME		www
 hostname		IN	A		51.178.41.128
 mail			IN	A		51.178.41.128
 postfixadmin		IN	CNAME		hostname
+@		        IN 	TXT 		"v=spf1 a mx ip4:51.178.41.128 ~all"
 
