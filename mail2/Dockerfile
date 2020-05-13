@@ -30,8 +30,8 @@ RUN mkdir -p /var/www/html/lambert.maximilien
 RUN chown -R lambert.maximilien:lambert.maximilien /var/www/html/lambert.maximilien
 
 
-
-
+#suppression msg d'erreur apache2
+RUN echo "ServerName localhost" | sudo tee /etc/apache2/conf.d/fqdn
 
 RUN chmod +x /etc/runservices.sh
 
