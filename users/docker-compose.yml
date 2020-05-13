@@ -3,17 +3,16 @@ version: '3'
 services:
  user1:
     image: saitam/user:latest
-    container_name: userTest
+    container_name: administration
     dns: 
-    - 172.16.0.3
-    - 8.8.8.8
+    - 172.16.0.2
     dns_search: intranet
     tty: true
     networks:
-      custom_network:
+      administration:
         ipv4_address: 172.16.2.1
         
 networks:
-  custom_network:
+  administration:
     external:
       name: administration
