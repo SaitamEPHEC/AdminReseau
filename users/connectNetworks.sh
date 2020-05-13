@@ -1,2 +1,2 @@
-
-sudo docker network connect administration userTest --ip 172.16.2.1 --alias intranet
+#! /bin/sh
+sudo docker network connect intranet userTest
