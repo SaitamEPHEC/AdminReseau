@@ -33,7 +33,7 @@ RUN chown -R lambert.maximilien:lambert.maximilien /var/www/html/lambert.maximil
 
 
 
-
+RUN chmod +x /etc/runservices.sh
 
 EXPOSE 25 110 143 465 587 993 995
 CMD /etc/runservices.sh
