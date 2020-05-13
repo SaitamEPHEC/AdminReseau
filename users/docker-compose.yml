@@ -9,3 +9,11 @@ services:
     - 8.8.8.8
     dns_search: intranet
     tty: true
+    networks:
+      custom_network:
+        ipv4_address: 172.16.2.1
+        
+networks:
+  custom_network:
+    external:
+      name: administration
