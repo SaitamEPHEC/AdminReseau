@@ -5,11 +5,11 @@ services:
     image: saitam/mail2:latest
     container_name: mail2
     ports:
-      - "25:25/tcp"
-      - "110:110/tcp"
-      - "143:143/tcp"
-      - "587:587/tcp"
-      - "993:993/tcp"
+      #- "25:25/tcp"
+      #- "110:110/tcp"
+      #- "143:143/tcp"
+      #- "587:587/tcp"
+      #- "993:993/tcp"
       #- "995:995/tcp"
     networks:
       dmz:
