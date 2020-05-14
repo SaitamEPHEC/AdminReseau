@@ -14,9 +14,6 @@ services:
     image: saitam/soa_interne:latest
     domainname: internal
     container_name: ns
-    ports:
-        - "53:53/tcp"
-        - "53:53/udp"
     dns: 172.16.0.3
     dns_search: intranet
     networks:
