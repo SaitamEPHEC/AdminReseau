@@ -1,6 +1,19 @@
 FROM ubuntu:16.04
 
-RUN apt-get update && apt-get -y install asterisk
+RUN apt-get update && \
+    apt-get install -y build-essential git-core pkg-config subversion libjansson-dev sqlite autoconf \
+      automake libtool libxml2-dev libncurses5-dev unixodbc unixodbc-dev libasound2-dev libogg-dev \
+      libvorbis-dev libneon27-dev libspandsp-dev uuid uuid-dev sqlite3 libsqlite3-dev \
+      libgnutls-dev wget && \
+
+    wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-13-current.tar.gz && \
+    tar -xzf asterisk-13-current.tar.gz && \
+    rm asterisk-13-current.tar.gz && \
+    cd asterisk-* && \
+    ./configure && \
+    contrib/scripts/get_mp3_source.sh && \
+    make menuselect.makeopts && \
+    menuselect/menuselect \
 
 WORKDIR /etc/asterisk
 
@@ -10,6 +23,9 @@ COPY ./config/voicemail.conf /etc/asterisk/voicemail.conf
 COPY ./config/sip.conf /etc/asterisk/sip.conf
 COPY ./config/queues.conf /etc/asterisk/queues.conf
 COPY ./config/rtp.conf /etc/asterisk/rtp.conf
+COPY ./config/modules.conf /etc/asterisk/modules.conf
+
+RUN service asterisk restart
 
 EXPOSE 5060 5060/udp
 EXPOSE 16384/udp
