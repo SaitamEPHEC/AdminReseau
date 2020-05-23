@@ -24,10 +24,14 @@ COPY main.cf /etc/postfix/main.cf
 
 #cree user
 RUN useradd -p $(openssl passwd -1 lambert) lambert.maximilien
-#RUN mkdir -p /var/www/html/lambert.maximilien
 RUN usermod -m -d /var/www/html/lambert.maximilien lambert.maximilien
 RUN mkdir -p /var/www/html/lambert.maximilien
 RUN chown -R lambert.maximilien:lambert.maximilien /var/www/html/lambert.maximilien
+
+RUN useradd -p $(openssl passwd -1 contact) contact
+RUN usermod -m -d /var/www/html/contact contact
+RUN mkdir -p /var/www/html/contact
+RUN chown -R contact:contact /var/www/html/contact
 
 
 #suppression msg d'erreur apache2
