@@ -23,3 +23,7 @@ postfixadmin		IN	CNAME		hostname
 mail._domainkey IN      TXT     ( "v=DKIM1; h=sha256; k=rsa; "
           "p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsxFhz9D1qVgtU7SzdMImkGs9yKhjZ6JXSKLkRP8YgrPlz6FTU7z6B1npOupXUSAVJPm3UiYcmyZ7uZqNRMCJoeLmgQw288qcHUJxUo6Rebb2eG925F0r5AzN8slQiyT7k30FDn7qXDrlSnUDMgZyd2aj0FEVkbGFCwSHewhwdqtq1S0zjkITNukA3Rfaa6kkqhMep3UJKCytmw"
           "A08TCqqO/Rx5HXi1kGfZwWIam7tO8Pp9uoT/H5lHsmASpNUyRildI74Q4AvA3HX0TqncOdxDPXI/S0+J9GoEL+fsZyloQjQJ97yu3VOWc94pylN9u4J5xeQ4BmwyJ6wsJWZGKM8QIDAQAB" )  ; ----- DKIM key mail for wt1-8.ephec-ti.be
+
+_sip._udp		SRV	0	0	5060	sip
+_sip._tcp		SRV 	0	0	5060	sip
+sip			IN	A	51.178.41.128  
