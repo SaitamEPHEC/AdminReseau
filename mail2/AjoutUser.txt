@@ -1,0 +1,10 @@
+Pour ajouter un utilisateur et donc lui crée un mail il faut:
+- ouvrir le fichier Dockerfile
+- copier les lignes suivantes et remplacer USER et PASS par le nom et le mot de passe du futur utilisateur.
+RUN useradd -p $(openssl passwd -1 PASS) USER
+RUN usermod -m -d /var/www/html/USER USER
+RUN mkdir -p /var/www/html/USER
+RUN chown -R USER:USER /var/www/html/USER
+
+-coller à la suite des autres utilisateurs dans le Dockerfile
+-relancer les commandes de création d'images et de conteneurs docker
