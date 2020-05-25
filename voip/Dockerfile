@@ -46,6 +46,6 @@ COPY ./config/voicemail.conf /etc/asterisk/voicemail.conf
 COPY ./config/sip.conf /etc/asterisk/sip.conf
 COPY ./config/iax.conf /etc/asterisk/iax.conf
 COPY ./config/features.conf /etc/asterisk/features.conf
-COPY ./res_parking.conf /etc/asterisk/res_parking.conf
+COPY ./config/res_parking.conf /etc/asterisk/res_parking.conf
 
 CMD asterisk -fvvv
