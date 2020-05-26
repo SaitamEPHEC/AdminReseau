@@ -4,9 +4,7 @@ RUN apt-get update -y
 RUN apt-get upgrade -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get install apache2 -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get install php -y
-
 RUN DEBIAN_FRONTEND=noninteractive apt-get install postfix -y
-
 RUN DEBIAN_FRONTEND=noninteractive apt-get install dovecot-imapd dovecot-pop3d -y
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install wget unzip -y
