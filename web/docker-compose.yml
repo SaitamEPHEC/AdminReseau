@@ -1,0 +1,58 @@
+version: '3'
+
+services:
+ dbgil:
+  container_name: dbgil
+  image: mysql
+  ports:
+    - "3306:3306"
+  restart: always
+  environment:
+    MYSQL_ROOT_PASSWORD: root
+  volumes:
+    - dbdata:/var/lib/mysql
+ webserver:
+   depends_on:
+     - dbgil
+   image: saitam/gillesquirynensys:latest
+   ports:
+     - "8021:80"
+     - "8022:8443"
+   links:
+     - dbgil
+ frontendintraweb:
+   image: saitam/web_intra:latest
+   container_name: web_interne
+   restart: always
+#    ports:
+#        - 80:80
+#    networks:
+ #     intranet:
+  #      ipv4_address: 172.16.0.4
+
+#networks:
+#  intranet:
+#    driver: bridge
+#    ipam:
+#      driver: default
+#      config:
+#        - subnet: 172.16.0.0/24
+ frontendweb:
+   image: saitam/web_vitrine:latest
+   ports:
+     - "8070:80"
+   environment:
+     VIRTUAL_HOST: www.wt1-8.ephec-ti.be,wt1-8.ephec-ti.be
+   restart: always
+   container_name: webvitrine
+ webb2bsite:
+   image: saitam/web_b2b:latest
+   ports:
+     - "8080:80"
+   environment:
+     VIRTUAL_HOST: b2b.wt1-8.ephec-ti.be
+#     VIRTUAL PORT: 8080b
+   restart: always
+   container_name: webb2b
+volumes:
+    dbdata:
