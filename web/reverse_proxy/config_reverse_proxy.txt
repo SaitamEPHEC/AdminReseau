@@ -1,0 +1,88 @@
+server {
+    server_name www.wt1-8.ephec-ti.be;
+
+
+
+    location / {
+        proxy_pass http://51.178.41.51:8070/;
+        proxy_set_header Host $host;
+    }
+
+
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/b2b.wt1-8.ephec-ti.be/fullchain.pem; $
+    ssl_certificate_key /etc/letsencrypt/live/b2b.wt1-8.ephec-ti.be/privkey.pem$
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+server {
+    server_name b2b.wt1-8.ephec-ti.be;
+
+
+    location / {
+        proxy_pass http://51.178.41.51:8080;
+        proxy_set_header Host $host;
+    }
+
+
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/b2b.wt1-8.ephec-ti.be/fullchain.pem; $
+    ssl_certificate_key /etc/letsencrypt/live/b2b.wt1-8.ephec-ti.be/privkey.pem$
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+server {
+    server_name b2b.wt1-8.ephec-ti.be;
+
+
+    location / {
+        proxy_pass http://51.178.41.51:8021;
+        proxy_set_header Host $host;
+    }
+
+
+
+
+    listen 8443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/b2b.wt1-8.ephec-ti.be/fullchain.pem; $
+    ssl_certificate_key /etc/letsencrypt/live/b2b.wt1-8.ephec-ti.be/privkey.pem$
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+
+}
+server {
+    if ($host = b2b.wt1-8.ephec-ti.be) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    listen     80;
+    server_name b2b.wt1-8.ephec-ti.be;
+    return 404; # managed by Certbot
+
+
+}server {
+    if ($host = www.wt1-8.ephec-ti.be) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    listen     80;
+    server_name www.wt1-8.ephec-ti.be;
+    return 404; # managed by Certbot
+
+
+}
+
+
+
+
+
+
+
